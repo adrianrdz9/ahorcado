@@ -1,13 +1,16 @@
 <?php
     session_start();
     $datos = [];
+    if(!isset($_COOKIE["usuario_nombre"]))
+       header("Location: ./login.php");
+
 
     if(empty($_COOKIE["pistas"]))
-        setcookie("pistas", 0);
+        setcookie("pistas", 0, 0, "/");
     if(empty($_COOKIE["ganadas"]))
-        setcookie("ganadas", 0);
+        setcookie("ganadas", 0, 0, "/");
     if(empty($_COOKIE["perdidas"]))
-        setcookie("perdidas", 0);
+        setcookie("perdidas", 0, 0, "/");
     
 
     if(empty($_SESSION["datos"])){
@@ -104,15 +107,21 @@
         <div class="card top-space user">
             <div id="datosJugador">
                 <figure>
-                    <img src="https://picsum.photos/200" alt="">
-                    <button id="Cambiar foto">
+                    <?php
+                        if(file_exists("./imagenes/".$_COOKIE["usuario_nomusuario"] . ".png")){
+                            echo "<img src='./imagenes/".$_COOKIE["usuario_nomusuario"].".png'  alt=''>";
+                        }else{
+                            echo "<img src='./imagenes/default.png'>";
+                        }
+                    ?>
+                    <button id="Cambiar foto"  onclick="avatar.click();">
                         <i class="material-icons">
                             camera_alt
                         </i>
                     </button>
                 </figure> 
                 <h2>
-                    Nombre del jugador
+                    <?php echo $_COOKIE["usuario_nombre"] ?>
                 </h2>
             </div>    
             <div>
@@ -163,7 +172,7 @@
                 </button>
 
                 <span>Cerrar sesion</span>
-                <button id="salir">
+                <button id="salir" onclick="window.location.replace('./logout.php')">
                     <i class="material-icons">
                         person
                     </i>
@@ -174,7 +183,10 @@
     </div>
     <div class="top-space"></div>
     <form action="./validar.php" method="POST" id="letraForm">
-            <input type="hidden" name="letra">
+        <input type="hidden" name="letra">
+    </form>
+    <form action="./actualizarUsuario.php" method="POST" style="display: none;" enctype="multipart/form-data">
+        <input type="file" name="avatar" id="avatar" onchange="this.form.submit()">
     </form>
     <script src="js/main.js"></script>
     <?php

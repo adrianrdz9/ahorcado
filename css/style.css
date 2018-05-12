@@ -11,6 +11,13 @@ h1 {
   font-weight: 200;
 }
 
+.card {
+  border-radius: 5px;
+  border: solid 1px #ccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  padding: 1em 0.3em;
+}
+
 .letras {
   width: 75%;
   margin: 0 auto;
@@ -70,13 +77,6 @@ h1 {
   margin: 0 auto;
 }
 
-.card {
-  border-radius: 5px;
-  border: solid 1px #ccc;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  padding: 1em 0.3em;
-}
-
 .user {
   text-align: center;
 }
@@ -87,6 +87,7 @@ h1 {
 
 .user figure img {
   border-radius: 50%;
+  width: 200px;
 }
 
 .user figure button {
@@ -165,5 +166,71 @@ h1 {
 
 #canvasContainer canvas {
   display: inline;
+}
+
+/***********LOGIN*************/
+.login-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.login-container > .card {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.login-container > .card input {
+  display: block;
+  margin: 1em auto;
+}
+
+.login-container > .card input:not([type="submit"]) {
+  border: 0;
+  font-size: 1em;
+  border-bottom: 2px solid #261447;
+  width: 40%;
+  transition: all 0.3s;
+}
+
+.login-container > .card input:not([type="submit"]):focus {
+  width: 70%;
+  border-bottom: 2px solid #9f7fdb;
+  outline: none;
+}
+
+.login-container > .card input[type="submit"] {
+  padding: 7px;
+  background-color: teal;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.login-container > .card input[type="submit"]:hover {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), -1px -1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.login-container > .card span, .login-container > .card a {
+  display: block;
+  font-size: 0.7em;
+}
+
+.login-container > .card a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-container > .card a, .login-container > .card a:visited {
+  color: teal;
 }
 /*# sourceMappingURL=style.css.map */

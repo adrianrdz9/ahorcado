@@ -11,6 +11,13 @@ h1{
     font-weight: 200;
 }
 
+.card{
+    border-radius: 5px;
+    border: solid 1px #ccc;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    padding: 1em 0.3em;
+}
+
 .letras{
     width: 75%;
     margin: 0 auto;
@@ -71,12 +78,7 @@ h1{
     margin: 0 auto;
 }
 
-.card{
-    border-radius: 5px;
-    border: solid 1px #ccc;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-    padding: 1em 0.3em;
-}
+
 
 .user{
     text-align: center;
@@ -84,6 +86,7 @@ h1{
         position: relative;
         img{
             border-radius: 50%;
+            width: 200px;
         }
         
         button{
@@ -154,5 +157,66 @@ h1{
     margin-top: -50px;
     canvas{
         display: inline;
+    }
+}
+
+/***********LOGIN*************/
+.login-container{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    &>.card{
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        input{
+            display: block;
+            margin: 1em auto;
+            &:not([type="submit"]){
+                border: 0;
+                font-size: 1em;
+                border-bottom:2px solid #261447;
+                width: 40%;
+                transition: all 0.3s;
+                &:focus{
+                    width: 70%;
+                    border-bottom: 2px solid lighten(#261447, 50);
+                    outline: none;
+                }
+            }
+            &[type="submit"]{
+                padding: 7px;
+                background-color: teal;
+                border: 0;
+                border-radius: 5px;
+                color: white;
+                font-weight: bold;
+                font-size: 1em;
+                cursor: pointer;
+                box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+                &:hover{
+                    box-shadow: 2px 2px 5px rgba(0,0,0,0.7),
+                                -1px -1px 3px rgba(0,0,0,0.7);
+                }
+            }
+        }
+
+        span, a{
+            display: block;
+            font-size: 0.7em;
+        }
+
+        a{
+            &, &:visited{
+                color: teal;
+            }
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
     }
 }
