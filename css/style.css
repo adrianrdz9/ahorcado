@@ -83,12 +83,16 @@ h1 {
 
 .user figure {
   position: relative;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .user figure img {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 50%;
+  height: 50%;
+  min-width: 100px;
+  min-height: 100px;
 }
 
 .user figure button {

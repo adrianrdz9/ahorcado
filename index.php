@@ -61,7 +61,7 @@
 
 </head>
 <body>
-    <h1>Ahorcado</h1>
+    <h1>Ahorcado - destinos turisticos en México</h1>
     <div id="canvasContainer">
         <canvas width="500" height="300" onload="alert();" id="canvas"></canvas>
     </div>
