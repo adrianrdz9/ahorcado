@@ -44,7 +44,7 @@
                 <input type="text" name="nombre" placeholder="Nombre">
                 <input type="text" name="usuario" placeholder="Nombre de usuario">
                 <input type="password" name="password" placeholder="Contraseña">
-                <input type="submit" value="Iniciar sesion"> 
+                <input type="submit" value="Registrarse"> 
             </form>
             <span>¿Ya te registraste?</span>
             <a href="./login.php">Iniciar sesion</a>
