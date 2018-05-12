@@ -29,6 +29,7 @@
                 array_push($_SESSION["datos"]["palabra"]["encontrada"], 0);
             }
         }
+    }
     $ahorcado = count($_SESSION["datos"]["usadas"]["incorrectas"]);
 
     if($ahorcado >= 9 && $_SESSION["status"] == "jugando"){
