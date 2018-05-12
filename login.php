@@ -14,8 +14,7 @@
             if($pw == $pwc){
                 setcookie("usuario.nombre", base64_decode(fgets($file)), 0, "/");
                 setcookie("usuario.nomusuario", $usuario, 0, "/");
-                echo "Sesion iniciada";
-                echo "<script>setTimeout(()=>window.location.replace('./'), 200)</script>";
+                echo "<script>setTimeout(()=>window.location.replace('./'), 50)</script>";
 
             }else{
                 echo "Usuario o contraseña incorrectos";

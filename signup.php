@@ -13,6 +13,11 @@
             fprintf($file, "%s\n", $pw);
             fprintf($file, "%s", base64_encode($_POST["nombre"]));
             fclose($file);
+
+            setcookie("usuario.nombre", $_POST["nombre"], 0, "/");
+            setcookie("usuario.nomusuario", $usuario, 0, "/");
+        
+            echo "<script>setTimeout(()=>window.location.replace('./'), 50)</script>";
         }
     }
 
