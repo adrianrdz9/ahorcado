@@ -24,12 +24,11 @@
         $pal = $palabras[array_rand($palabras)];
         $_SESSION["datos"]["palabra"] = ["letra"=>[], "encontrada"=>[]];
         foreach (str_split($pal) as $key => $value) {
-            array_push($_SESSION["datos"]["palabra"]["letra"], $value);
-            array_push($_SESSION["datos"]["palabra"]["encontrada"], 0);
+            if(ctype_alpha($value)){
+                array_push($_SESSION["datos"]["palabra"]["letra"], $value);
+                array_push($_SESSION["datos"]["palabra"]["encontrada"], 0);
+            }
         }
-        array_pop($_SESSION["datos"]["palabra"]["letra"]);
-        array_pop($_SESSION["datos"]["palabra"]["encontrada"]);
-    }
     $ahorcado = count($_SESSION["datos"]["usadas"]["incorrectas"]);
 
     if($ahorcado >= 9 && $_SESSION["status"] == "jugando"){
